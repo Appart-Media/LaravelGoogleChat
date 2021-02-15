@@ -42,7 +42,7 @@ class GoogleChatHandler extends AbstractProcessingHandler
                 $errorMessages[] = [
                     "keyValue" => [
                         "topLabel" => $name,
-                        "content" => $value
+                        "content" => (string)$value
                     ]
                 ];
             }
