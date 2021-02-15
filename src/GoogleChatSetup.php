@@ -1,6 +1,6 @@
 <?php
 
-namespace VrielingSoftwareOntwikkeling\LaravelGoogleChat;
+namespace Appart\LaravelGoogleChat;
 
 use Monolog\Logger;
 
