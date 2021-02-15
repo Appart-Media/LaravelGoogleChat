@@ -28,6 +28,26 @@ class GoogleChatHandler extends AbstractProcessingHandler
             $color = '#ffc400';
         }
 
+        $errorMessages = [
+            [
+                "textParagraph" => [
+                    "text" => $record['message']
+                ],
+            ],
+        ];
+
+        //Add extra context form the error message
+        if (!empty($record['context'])) {
+            foreach ($record['context'] as $name => $value) {
+                $errorMessages[] = [
+                    "keyValue" => [
+                        "topLabel" => $name,
+                        "content" => $value
+                    ]
+                ];
+            }
+        }
+
         Gobble::post(env('LOG_GOOGLE_WEBHOOK_URL'), [
             'headers' => [
                 'Content-Type' => 'application/json'
@@ -46,17 +66,11 @@ class GoogleChatHandler extends AbstractProcessingHandler
                                 ]
                             ],
                             [
-                                "widgets" => [
-                                    [
-                                        "textParagraph" => [
-                                            "text" => $record['message']
-                                        ]
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
+                                "widgets" => $errorMessages,
+                            ],
+                        ],
+                    ],
+                ],
             ]),
         ]);
     }

@@ -1,15 +1,19 @@
 {
-    "name": "vrielingsoftwareontwikkeling/laravel-google-chat",
+    "name": "appart/laravel-google-chat",
     "license": "MIT",
     "authors": [
         {
             "name": "Vrieling Softwaare Ontwikkeling",
             "email": "info@vrielingsoftwareontwikkeling.com"
+        },
+        {
+            "name": "Niek Vaanholt",
+            "email": "niek@appart.nl"
         }
     ],
     "autoload": {
         "psr-4": {
-            "VrielingSoftwareOntwikkeling\\LaravelGoogleChat\\": "src/"
+            "Appart\\LaravelGoogleChat\\": "src/"
         }
     },
     "require": {
