@@ -11,6 +11,10 @@
             "email": "niek@appart.nl"
         }
     ],
+    "repositories": [{
+        "type": "composer",
+        "url": "https://packages.appartmedia.nl"
+    }],
     "autoload": {
         "psr-4": {
             "Appart\\LaravelGoogleChat\\": "src/"
